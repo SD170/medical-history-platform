@@ -1,0 +1,755 @@
+{
+	"info": {
+		"_postman_id": "97d494f8-3cbb-4bb3-856f-50e87fabd9df",
+		"name": "Medical History Platform",
+		"description": "college project\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"SD\",\n    \"email\":\"sd@user.com\",\n    \"password\":\"password\",\n    \"phone\":\"9999999999\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"sd@user.com\",\n    \"password\":\"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userdetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlYTcxYjk4OTFmODg2MGRiMjJlZTQiLCJyb2xlIjoidXNlciIsImlhdCI6MTYzODgzNjAxNiwiZXhwIjoxNjcwMzcyMDE2fQ._xjrDMOnupaKs6wO9e96bs4jkTwFvQN3O-b18SWJOhY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/userDetail",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"userDetail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "login admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sd@admin.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/loginAdmin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"loginAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create admin (as admin)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFjZmEwMTMzODk0ZTBmM2Y0ZGM5ZDQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mzg4MDQ0NzMsImV4cCI6MTY3MDM0MDQ3M30.KfLySeWQ1JLRGSL27abJRH5nQrKmk9OLiTtXaiO_9YI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"SD\",\n    \"email\":\"sd@admin.com\",\n    \"password\":\"password\",\n    \"phone\":\"8888888888\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/createAdmin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"createAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create hospital",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlYTkzYjFmYTM5NmNiY2YwYTQ5OGMiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mzg4MzY1NjIsImV4cCI6MTY3MDM3MjU2Mn0.S1h0caGyk26RvIuIghrWpV2bWvsZABvfB5lNW9iICFU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hospitalName\":\"Sodepur Haashpatal\",\n    \"email\":\"sd@hospital.com\",\n    \"password\":\"password\",\n    \"phone\":\"7777777777\",\n    \"registrationNo\":\"69\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/createHospital",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"createHospital"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlYTkzYjFmYTM5NmNiY2YwYTQ5OGMiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mzg4MzY1NjIsImV4cCI6MTY3MDM3MjU2Mn0.S1h0caGyk26RvIuIghrWpV2bWvsZABvfB5lNW9iICFU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/adminDetail",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"adminDetail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hospital",
+			"item": [
+				{
+					"name": "login hospital",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sd@hospital.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/hospital/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hospital",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create stuffs (as hospital)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlYTkxNjFmYTM5NmNiY2YwYTQ5N2UiLCJyb2xlIjoiaG9zcGl0YWwiLCJpYXQiOjE2Mzg4MzY3NjAsImV4cCI6MTY3MDM3Mjc2MH0.fQRgnymwBXJZm1VXW9NNRPsBa_d0ZylIMK8tbEzUJSc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"SD\",\n    \"email\":\"sd@stuff.com\",\n    \"password\":\"password\",\n    \"phone\":\"6666666666\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/hospital/createStuff",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hospital",
+								"createStuff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hospital detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlYTkxNjFmYTM5NmNiY2YwYTQ5N2UiLCJyb2xlIjoiaG9zcGl0YWwiLCJpYXQiOjE2Mzg4MzY3NjAsImV4cCI6MTY3MDM3Mjc2MH0.fQRgnymwBXJZm1VXW9NNRPsBa_d0ZylIMK8tbEzUJSc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/hospital/hospitalDetail",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hospital",
+								"hospitalDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stuff list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlYTkxNjFmYTM5NmNiY2YwYTQ5N2UiLCJyb2xlIjoiaG9zcGl0YWwiLCJpYXQiOjE2Mzg4MzY3NjAsImV4cCI6MTY3MDM3Mjc2MH0.fQRgnymwBXJZm1VXW9NNRPsBa_d0ZylIMK8tbEzUJSc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/hospital/listStuffs",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hospital",
+								"listStuffs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get stuff (see description)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlYTkxNjFmYTM5NmNiY2YwYTQ5N2UiLCJyb2xlIjoiaG9zcGl0YWwiLCJpYXQiOjE2Mzg4MzY3NjAsImV4cCI6MTY3MDM3Mjc2MH0.fQRgnymwBXJZm1VXW9NNRPsBa_d0ZylIMK8tbEzUJSc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/hospital/listStuffs/08GPVIG00W",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hospital",
+								"listStuffs",
+								"08GPVIG00W"
+							]
+						},
+						"description": "pass the stuff's id as param.\n\nnot query param"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "hospital stuffs",
+			"item": [
+				{
+					"name": "login stuffs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"email\":\"sd@stuff.com\",\n    \"password\":\"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/hospitalStuff/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hospitalStuff",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlYWEyNjFmYTM5NmNiY2YwYTQ5OWQiLCJyb2xlIjoic3R1ZmYiLCJpYXQiOjE2Mzg4MzY5MzMsImV4cCI6MTY3MDM3MjkzM30.mUbN3IoG56_2hhrqEP7qI9oN2rSakqMDZVVos8xREtQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"SD\",\n    \"email\":\"sd@user2.com\",\n    \"password\":\"password\",\n    \"phone\":\"5555555555\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/hospitalStuff/createUser",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hospitalStuff",
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stuff detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlYWEyNjFmYTM5NmNiY2YwYTQ5OWQiLCJyb2xlIjoic3R1ZmYiLCJpYXQiOjE2Mzg4MzY5MzMsImV4cCI6MTY3MDM3MjkzM30.mUbN3IoG56_2hhrqEP7qI9oN2rSakqMDZVVos8xREtQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/hospitalStuff/stuffDetail",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hospitalStuff",
+								"stuffDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlMTI0Y2ExZmE0NzM0MzhiMjY2OWQiLCJyb2xlIjoic3R1ZmYiLCJpYXQiOjE2Mzg4MDAzMjYsImV4cCI6MTY3MDMzNjMyNn0.aF31gYN3E2sffeVrZfWXzZQ_2Otspe8x9dhq9Byl6xY"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/hospitalStuff/listUser/9DB0LWXKOX",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hospitalStuff",
+								"listUser",
+								"9DB0LWXKOX"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Timeline",
+			"item": [
+				{
+					"name": "timeline create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlYWEyNjFmYTM5NmNiY2YwYTQ5OWQiLCJyb2xlIjoic3R1ZmYiLCJpYXQiOjE2Mzg4MzY5MzMsImV4cCI6MTY3MDM3MjkzM30.mUbN3IoG56_2hhrqEP7qI9oN2rSakqMDZVVos8xREtQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"9DB0LWXKOX\",\n    \"doctorName\": \"Dr. SD\",\n    \"threatLevel\": \"critical\",\n    \"typeOfCase\": \"heart\",\n    \"detailOfCase\": \"heart bad\",\n    \"surgery\": false,\n    \"medications\":[\"some tablet\",\"some syrup\", \"some  joorii booty\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/timeline/createTimeline/9DB0LWXKOX",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"timeline",
+								"createTimeline",
+								"9DB0LWXKOX"
+							]
+						},
+						"description": "threatLevel enum's are [\"normal\", \"moderate\", \"critical\"]"
+					},
+					"response": []
+				},
+				{
+					"name": "timelinefileupload (see descroption)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlYWEyNjFmYTM5NmNiY2YwYTQ5OWQiLCJyb2xlIjoic3R1ZmYiLCJpYXQiOjE2Mzg4MzY5MzMsImV4cCI6MTY3MDM3MjkzM30.mUbN3IoG56_2hhrqEP7qI9oN2rSakqMDZVVos8xREtQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "testReports",
+									"type": "file",
+									"src": "/home/sd17/Pictures/Screenshot from 2021-10-20 19-30-28.png"
+								},
+								{
+									"key": "prescriptions",
+									"type": "file",
+									"src": "/home/sd17/Pictures/Screenshot from 2021-10-20 19-30-50.png"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/timeline/createTimelineFileUpload/61aeac8363abe70c8f23cfaf",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"timeline",
+								"createTimelineFileUpload",
+								"61aeac8363abe70c8f23cfaf"
+							]
+						},
+						"description": "(pass the created timelineID as param not query param)"
+					},
+					"response": []
+				},
+				{
+					"name": "userTimelineHistory (see descroption) ",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFlYWEyNjFmYTM5NmNiY2YwYTQ5OWQiLCJyb2xlIjoic3R1ZmYiLCJpYXQiOjE2Mzg4MzY5MzMsImV4cCI6MTY3MDM3MjkzM30.mUbN3IoG56_2hhrqEP7qI9oN2rSakqMDZVVos8xREtQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"9DB0LWXKOX\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/timeline/userTimelineHistory",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"timeline",
+								"userTimelineHistory"
+							]
+						},
+						"description": "if user is stuff or hospital...pass requierd userId in body\n\nif user want their own timeline.... just pass the auth header"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000/api/v1"
+		},
+		{
+			"key": "adminJwt",
+			"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWFjZmEwMTMzODk0ZTBmM2Y0ZGM5ZDQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mzg3Mjc1NTEsImV4cCI6MTY3MDI2MzU1MX0.cut4RrXj586GrAuRNwTMlvUiIu1ifwhct1q0DYSu1o8"
+		}
+	]
+}
